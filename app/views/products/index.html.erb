@@ -1,24 +1,29 @@
 <div class="main-content">
   <%= render partial: 'msg'%>
   <h1>Manage Products</h1>
-</br>
+  <br>
+	<div class="rgt mar-btm">
+		<%= link_to_if @products.present?, "Download Excel", params.merge({format: "xls"}) %>
+	</div>
+	<br>
   <%= form_for @product, url: products_url, html: {method: :get} do |f| %>
   	<tr>
       <td class="bor-rgt"><label>Model:</label></td><td class="bor-rgt"><%=f.text_field :model, max_length: 10%></td>
       <td class="bor-rgt"><label>Brand:</label></td><td class="bor-rgt"><%=f.text_field :brand, max_length: 10%></td>
       <td class="bor-rgt"><label>RAM:</label></td><td class="bor-rgt"><%=f.text_field :ram, max_length: 5%></td>
       <td class="bor-rgt"><label>External Storgae:</label></td><td class="bor-rgt"><%=f.text_field :external_storgae, max_length: 5%></td>
-      <td class="sb-bt" style="border-bottom:none;"><%=f.submit "Go", class: "mar-rgt"%><%= link_to('Clear', products_url)%></td>
+      <td class="sb-bt" style="border-bottom:none;"><%=f.submit "Search", class: "mar-rgt"%></td>
     </tr>
   <%end%>
+  <br>
   <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#f5f7fa" class="tab-bor">
     <tr>
-      <td class="bor-rgt">Name</td>
-      <td class="bor-rgt">Model</td>
-      <td class="bor-rgt">Brand</td>
-      <td class="bor-rgt">Year</td>
-      <td class="bor-rgt">RAM</td>
-      <td class="bor-rgt">External Storgae</td>      
+      <th class="bor-rgt">Name</th>
+      <th class="bor-rgt">Model</th>
+      <th class="bor-rgt">Brand</th>
+      <th class="bor-rgt">Year</th>
+      <th class="bor-rgt">RAM</th>
+      <th class="bor-rgt">External Storgae</th>      
     </tr>
     <% if @products.present?
       @products.each do |product| %>
