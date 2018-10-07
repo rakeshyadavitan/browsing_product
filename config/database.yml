@@ -5,12 +5,15 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8
-  username: root
-  password: 
-  host: 127.0.0.1
-  port: 3306
+  # adapter: mysql2
+  # encoding: utf8
+  # username: root
+  # password: 
+  # host: 127.0.0.1
+  # port: 3306
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") {5}%>
 
 development:
   <<: *default
@@ -25,5 +28,6 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
   database: browsing_product
+  username: browsing_product
+  password: <%= ENV['BROWSING_PRODUCT_DATABASE_PASSWORD']>
