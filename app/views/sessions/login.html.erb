@@ -1,11 +1,48 @@
-<% @page_title = "UserAuth | Login"%>
-<div class= "Sign_Form">
-  <h1>Log in</h1>
-  <br>
-  <%= form_tag(action: 'login_attempt') do %>
-    Email: <%= text_field_tag(:username_or_email) %>
-    Password:<%= password_field_tag :login_password %>
-    <%= submit_tag("Log In") %>
-  <% end %>
-  <%= link_to "SignUp", signup_url%>
-</div>
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			input{
+		    width: 100%;
+		    padding: 12px 20px;
+		    margin: 8px 0;
+		    display: inline-block;
+		    border: 1px solid #ccc;
+		    box-sizing: border-box;
+			}
+
+			button {
+		    background-color: #4CAF50;
+		    color: white;
+		    padding: 14px 20px;
+		    margin: 8px 0;
+		    border: none;
+		    cursor: pointer;
+		    width: 100%;
+			}
+
+			button:hover {
+			  opacity: 0.8;
+			}
+
+			.container {
+			  padding-top: 200px;
+			  padding-left: 500px;
+			  padding-right: 500px;
+			}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<%= form_tag(action: 'login_attempt') do %>
+			<label for="uname"><b>Username/Email</b></label>
+	  	<%= text_field_tag(:username_or_email) %>
+	    <label for="psw"><b>Password</b></label>
+	    <%= password_field_tag :login_password %>
+	    <%= submit_tag("Log In") %>
+	  <% end %>
+	  <button><%= link_to "SignUp", signup_url%></button>  
+	</div>	
+</body>
+</html>
+

@@ -1,24 +1,26 @@
 <div class="main-content">
-  <%= render partial: 'msg'%>
-  <div class="rgt mar-btm">
+	<div class="rgt mar-btm">
 		<%= link_to "Logout", logout_url %>
 	</div>
-	<br>
+  <%= render partial: 'msg'%>
+  <br>
   <h1>Manage Products</h1>
   <br>
 	<div class="rgt mar-btm">
 		<%= link_to_if @products.present?, "Download Excel", params.merge({format: "xls"}) %>
 	</div>
 	<br>
-  <%= form_for @product, url: products_url, html: {method: :get} do |f| %>
-  	<tr>
-      <td class="bor-rgt"><label>Model:</label></td><td class="bor-rgt"><%=f.text_field :model, max_length: 10%></td>
-      <td class="bor-rgt"><label>Brand:</label></td><td class="bor-rgt"><%=f.text_field :brand, max_length: 10%></td>
-      <td class="bor-rgt"><label>RAM:</label></td><td class="bor-rgt"><%=f.text_field :ram, max_length: 5%></td>
-      <td class="bor-rgt"><label>External Storgae:</label></td><td class="bor-rgt"><%=f.text_field :external_storgae, max_length: 5%></td>
-      <td class="sb-bt" style="border-bottom:none;"><%=f.submit "Search", class: "mar-rgt"%></td>
-    </tr>
-  <%end%>
+	<table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#f5f7fa" class="tab-bor">
+	  <%= form_for @product, url: products_url, html: {method: :get} do |f| %>
+	  	<tr>
+	      <td class="bor-rgt"><label>Model:</label></td><td class="bor-rgt"><%=f.text_field :model, max_length: 10%></td>
+	      <td class="bor-rgt"><label>Brand:</label></td><td class="bor-rgt"><%=f.text_field :brand, max_length: 10%></td>
+	      <td class="bor-rgt"><label>RAM:</label></td><td class="bor-rgt"><%=f.text_field :ram, max_length: 5%></td>
+	      <td class="bor-rgt"><label>External Storgae:</label></td><td class="bor-rgt"><%=f.text_field :external_storgae, max_length: 5%></td>
+	      <td><%=f.submit "Search", class: "mar-rgt"%></td>
+	    </tr>
+	  <%end%>
+	</table>
   <br>
   <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#f5f7fa" class="tab-bor">
     <tr>
