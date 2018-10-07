@@ -1,0 +1,33 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{font-family:Arial,Helvetica,sans-serif; color:#656565; font-size:12px; min-height:100%;}
+*{margin:0; padding:0; list-style:none;}
+a{color:#55789e; text-decoration:none}
+a:hover{text-decoration:none}
+.main-content{float:left; margin:30px 0 20px 66px; width:94%; min-height:100%}
+h1{font-size:14px; color:#55789e; font-weight:bold; margin:0 0 7px 0; float:left}
+.notice{float:left; width:98%; text-align:center; font-weight:bold; font-size:13px; background-color:#d4fecc; border:1px solid #a6d99e; color:#277819; padding:10px 10px 5px 10px; margin:0 0 10px 0}
+.notice img {float:left; margin:-5px 3px 0 0}
+table.tab-bor{clear:both}
+table.tab-bor tr.heightlght{background-color:#dddddd;}
+table.tab-bor tr.heightlght td{padding:11px 7px;}
+table.tab-bor td.bdr{border-top:1px solid #fff; padding:7px;border-right:1px solid #fff;border-bottom:0;}
+table.tab-bor td.nbdr{border:0;border-right:1px solid #fff;}
+table.tab-bor td{border-bottom:1px solid #fff; padding:7px;}
+table.tab-bor td.bor-rgt{border-right:1px solid #fff;}
+.bor-rgt select {
+  width: 100%;
+}
+.sb-bt input {
+    background: url(../assets/tab-heading.png) repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    font-weight: bold;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.mar-rgt {
+    margin-right: 3px;
+
+}
