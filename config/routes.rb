@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   get "sessions/setting", as: :setting
   post "sessions/login_attempt", as: :login_attempt
 
+  namespace :mobile do
+    resources :products
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
