@@ -12,11 +12,11 @@
 	<br>
 	<table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#f5f7fa" class="tab-bor">
 	  <%= form_for @product, url: products_url, html: {method: :get} do |f| %>
-	  	<tr>
-	      <td class="bor-rgt"><label>Model:</label></td><td class="bor-rgt"><%=f.text_field :model, max_length: 10%></td>
-	      <td class="bor-rgt"><label>Brand:</label></td><td class="bor-rgt"><%=f.text_field :brand, max_length: 10%></td>
-	      <td class="bor-rgt"><label>RAM:</label></td><td class="bor-rgt"><%=f.text_field :ram, max_length: 5%></td>
-	      <td class="bor-rgt"><label>External Storgae:</label></td><td class="bor-rgt"><%=f.text_field :external_storgae, max_length: 5%></td>
+	  	<tr>       
+	      <td class="bor-rgt"><label>Model:</label></td><td class="bor-rgt"><%=f.text_field :model, value: params[:product][:model]%></td>
+	      <td class="bor-rgt"><label>Brand:</label></td><td class="bor-rgt"><%=f.text_field :brand, value: params[:product][:brand]%></td>
+	      <td class="bor-rgt"><label>RAM:</label></td><td class="bor-rgt"><%=f.text_field :ram, value: params[:product][:ram]%></td>
+	      <td class="bor-rgt"><label>External Storgae:</label></td><td class="bor-rgt"><%=f.text_field :external_storgae, value: params[:product][:external_storgae]%></td>
 	      <td><%=f.submit "Search", class: "mar-rgt"%></td>
 	    </tr>
 	  <%end%>
