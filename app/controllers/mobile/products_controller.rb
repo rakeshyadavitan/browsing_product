@@ -9,9 +9,9 @@ class Mobile::ProductsController < ApplicationController
     @response["payload"] = []
     parameter = {}
     parameter["model"] = params[:model]
-    parameter["band"] = params[:band]
+    parameter["brand"] = params[:brand]
     parameter["ram"] = params[:ram]
-    parameter["external_storage"] = params[:external_storage]
+    parameter["external_storgae"] = params[:extrenal_storage]
     @products = Product.search(parameter)
     @products.each do |product|
       api_hash = {}
