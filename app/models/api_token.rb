@@ -1,7 +1,7 @@
 class ApiToken < ActiveRecord::Base
 
   def self.token_valid?(token, username, action)
-    token_info = ApiToken.find_by_token_and_username(token, username)
+    token_info = ApiToken.where(token: token, username: username)
     if token_info.blank?
       token_details = ApiToken.create("token" => token, "username" => username)
       ApiTokenDetail.create("app_token_id" => token_details.id, "api" => action)
